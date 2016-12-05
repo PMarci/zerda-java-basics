@@ -106,7 +106,23 @@ class TestApple {
 Are the tests passing? Detail your answer! [2p] Fix the situation! [2p]
 
 #### Explain what you did, and answer the questions here:
-
+Yes, the tests are passing. The first one because the method `add()` method always returns 5, the second one because the first argument is smaller than the second, so the method `max_of_three` returns the third argument, which is 5.
+The methods could become functional, if they were written as follows:
+```java
+public int add(int a, int b) {
+    return a+b;
+  }
+//and
+  public int max_of_three(int a, int b, int c) {
+    if (a > b && a > c) {
+      return a;
+    } else if (b > a && b > c) {
+    return b
+    } else {
+    return c;
+    }
+  }
+```
 
 ## 4. Question time! (~20 mins) [6p]
 
