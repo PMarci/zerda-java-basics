@@ -1,6 +1,5 @@
 package com.greenfox.exams.java;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -12,13 +11,6 @@ public class Card {
     private String color;
     private String value;
     static Random rand = new Random();
-    private List<String> colors = Arrays.asList("karo", "sziv", "pikk", "treff");
-    private List<String> values = Arrays.asList("1","2","3", "4", "5", "6", "7", "8", "9", "10", "jung", "dama", "kiraly", "asz");
-
-    public Card() {
-        this.color = setRandom(colors);
-        this.value = setRandom(values);
-    }
 
     public String getColor() {
         return color;
@@ -37,5 +29,9 @@ public class Card {
     }
     static <T> T setRandom(List<T> list) {
         return list.get(rand.nextInt(list.size()));
+    }
+
+    public String toString() {
+        return color + value;
     }
 }
