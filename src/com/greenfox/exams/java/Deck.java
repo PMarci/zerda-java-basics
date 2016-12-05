@@ -1,5 +1,6 @@
 package com.greenfox.exams.java;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
  * WHAAAAAAAAAAAAAAAASSSSSUUUUUP
  */
 public class Deck {
-    private List<Card> cards;
-    private List<Card> used;
+    private List<Card> cards = new ArrayList<Card>();
+    private List<Card> used = new ArrayList<Card>();
     private List<String> colors = Arrays.asList("karo", "sziv", "pikk", "treff");
     private List<String> values = Arrays.asList("asz","2","3", "4", "5", "6", "7", "8", "9", "10", "jung", "dama", "kiraly");
 
@@ -44,9 +45,11 @@ public class Deck {
     }
 
     public Card drawCard(){
-        Card drawnCard = cards.get(cards.size());
+        Card drawnCard = cards.get(cards.size()-1);
         used.add(drawnCard);
-        cards.remove(cards.size());
-        return drawnCard;
+        if (!cards.isEmpty()) {
+            cards.remove(cards.size()-1);
+            return drawnCard;
+        } else return null;
     };
 }

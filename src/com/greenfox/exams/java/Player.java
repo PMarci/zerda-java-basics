@@ -1,5 +1,6 @@
 package com.greenfox.exams.java;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,14 +9,17 @@ import java.util.List;
  */
 public class Player {
     private String name = "User";
-    private List<Card> played;
-    private String playedInAString;
+    private List<Card> played = new ArrayList<Card>();
+    private String playedInAString = "";
     private int sum = 0;
 
-    public void sumPlayedCards(){
-        int valueInNumber;
-        for (Card c: played) {
-            switch (c.getValue()) {
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public void sumPlayedCards(Card card){
+        int valueInNumber = 0;
+            switch (card.getValue()) {
                 case "asz" : valueInNumber = 1;
                     break;
                 case "jung" : valueInNumber = 10;
@@ -24,17 +28,24 @@ public class Player {
                     break;
                 case "kiraly" : valueInNumber = 10;
                     break;
-                default: valueInNumber = Integer.parseInt(c.getValue());
+                default: valueInNumber = Integer.parseInt(card.getValue());
             }
-
-        }
+        this.sum+= valueInNumber;
     }
 
     public void addPlayedCard(Deck deck) {
-        played.add(deck.drawCard());
+        Card drawnCard = deck.drawCard();
+        played.add(drawnCard);
+        sumPlayedCards(drawnCard);
+        playedToString(drawnCard);
     }
+
+    public void setPlayedInAString(String playedInAString) {
+        this.playedInAString = playedInAString;
+    }
+
     public void playedToString(Card card) {
-        this.playedInAString+= card.toString();
+        this.playedInAString+= card.toString() + " ";
     }
     public String toString() {
         return String.format("%s played: %s", name, playedInAString);
