@@ -45,11 +45,15 @@ public class Deck {
     }
 
     public Card drawCard(){
-        Card drawnCard = cards.get(cards.size()-1);
-        used.add(drawnCard);
+        int lastCard = cards.size()-1;
+        lastCard = (cards.isEmpty()) ? 0 : lastCard;
         if (!cards.isEmpty()) {
-            cards.remove(cards.size()-1);
+        Card drawnCard = cards.get(lastCard);
+        used.add(drawnCard);
+            cards.remove(lastCard);
             return drawnCard;
-        } else return null;
-    };
+        } else {
+            return null;
+        }
+    }
 }

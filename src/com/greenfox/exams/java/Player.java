@@ -29,6 +29,7 @@ public class Player {
 
     public void sumPlayedCards(Card card){
         int valueInNumber = 0;
+        if (!(card==null))
             switch (card.getValue()) {
                 case "asz" : valueInNumber = 1;
                     break;
@@ -45,9 +46,11 @@ public class Player {
 
     public void addPlayedCard(Deck deck) {
         Card drawnCard = deck.drawCard();
-        played.add(drawnCard);
+        if (!(drawnCard == null)) {
+            played.add(drawnCard);
         sumPlayedCards(drawnCard);
         playedToString(drawnCard);
+        }
     }
 
     public void setPlayedInAString(String playedInAString) {
@@ -55,7 +58,9 @@ public class Player {
     }
 
     public void playedToString(Card card) {
-        this.playedInAString+= card.toString() + " ";
+        if (!(card == null)) {
+            this.playedInAString += card.toString() + " ";
+        }
     }
     public String toString() {
         return String.format("%s played: %s", name, playedInAString);

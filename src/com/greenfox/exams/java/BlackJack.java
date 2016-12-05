@@ -1,6 +1,7 @@
 package com.greenfox.exams.java;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +22,7 @@ public class BlackJack extends JFrame{
 
     private BlackJack() {
         BlackJack = new JPanel();
+        this.setMaximumSize(new Dimension(500, 1000));
         newGame = new JButton("New Game");
         drawACard = new JButton("Draw a Card");
         userPlayer = new Player("User");
