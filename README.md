@@ -128,7 +128,9 @@ public int add(int a, int b) {
 
 ### Where the abstract class is useful? [2p]
 #### Your answer:
-
+ An abstract class is useful when we want to create "child" classes which will then inherit the methods described in the abstract class.
+ These can be concrete or abstract methods, latter can be implemented in the child classes themselves. Different child classes can implement
+ the abstract method of the abstract class in different ways.
 ### Describe a method! Show the necessary parts and how are them called! [2p]
 #### Your answer:
 
