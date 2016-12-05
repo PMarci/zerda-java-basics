@@ -13,4 +13,19 @@ public class BlackJack {
     private static JLabel user;
     private static JLabel house;
 
+    private BlackJack() {
+
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new BlackJack();
+            }
+        });
+
+    }
+
+
 }

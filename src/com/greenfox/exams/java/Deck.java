@@ -44,6 +44,9 @@ public class Deck {
     }
 
     public Card drawCard(){
-        return null;
+        Card drawnCard = cards.get(cards.size());
+        used.add(drawnCard);
+        cards.remove(cards.size());
+        return drawnCard;
     };
 }
