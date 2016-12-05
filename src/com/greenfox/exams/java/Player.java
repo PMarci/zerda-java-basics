@@ -11,12 +11,17 @@ public class Player {
     private String name = "User";
     private List<Card> played = new ArrayList<Card>();
     private String playedInAString = "";
+    private int sum = 0;
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
 
     public int getSum() {
         return sum;
     }
 
-    private int sum = 0;
 
     public Player(String name) {
         this.name = name;

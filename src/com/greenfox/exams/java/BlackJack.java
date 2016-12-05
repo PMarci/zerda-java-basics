@@ -48,8 +48,10 @@ public class BlackJack extends JFrame{
             if (source.equals(newGame)) {
                 userPlayer.setPlayedInAString("");
                 user.setText(userPlayer.toString());
+                userPlayer.setSum(0);
                 housePlayer.setPlayedInAString("");
                 house.setText(userPlayer.toString());
+                housePlayer.setSum(0);
                 pack();
 
             } else if (source.equals(drawACard)) {
