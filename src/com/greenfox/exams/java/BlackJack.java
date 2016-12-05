@@ -37,6 +37,7 @@ public class BlackJack extends JFrame{
         this.add(BlackJack);
         this.pack();
         this.setVisible(true);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
 
@@ -48,10 +49,15 @@ public class BlackJack extends JFrame{
                 userPlayer.setPlayedInAString("");
                 user.setText(userPlayer.toString());
                 housePlayer.setPlayedInAString("");
+                house.setText(userPlayer.toString());
+                pack();
 
             } else if (source.equals(drawACard)) {
                 userPlayer.addPlayedCard(deck);
                 user.setText(userPlayer.toString());
+                if (housePlayer.getSum() < 17)
+                housePlayer.addPlayedCard(deck);
+                house.setText(housePlayer.toString());
                 pack();
             }
         }
